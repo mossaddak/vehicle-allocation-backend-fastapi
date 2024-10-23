@@ -22,7 +22,7 @@ This project is a FastAPI-based vehicle allocation system that allows employees 
     http://127.0.0.1:5000/docs
 
 
-**Install the Python dependencies for the project**
+**Install the dependencies**
 
     pip install -r requirements/development.txt
 
