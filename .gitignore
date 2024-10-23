@@ -4,7 +4,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Cython debug symbols
+cython_debug/
 
+.DS_Store
+.idea
+.idea/
+.vscode
+.vscode/
 
 # Environments
 .env
