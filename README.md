@@ -14,7 +14,13 @@ This project is a FastAPI-based vehicle allocation system that allows employees 
     cd ~
     python3 -m venv env
     source ~/env/bin/activate
-    source venv/bin/activate
+    source venv/bin/
+    
+**Build and run the project using Docker Compose**
+
+    docker-compose up --build
+    http://127.0.0.1:5000/docs
+
 
 **Install the Python dependencies for the project**
 
