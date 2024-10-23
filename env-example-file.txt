@@ -1,0 +1,6 @@
+'''
+Sample .env file. It will be updated alongside the original .env file's content.
+Create a .env file in the project root On the same level as index.py.
+'''
+
+MONGO_DB = "<MONGO_DB credential>"
