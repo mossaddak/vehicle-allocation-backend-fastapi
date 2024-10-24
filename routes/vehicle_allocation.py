@@ -183,10 +183,22 @@ def delete_vehicle_allocation(id: str):
             detail="Vehicle allocation not found!",
         )
 
-    # Perform the deletion
-    connection.VEHICLE_ALLOCATION.vehicle_allocation.delete_one({"_id": ObjectId(id)})
+    today = datetime.today().date()
+    allocation_date = datetime.strptime(
+        vehicle_allocation["allocation_date"], "%Y-%m-%d"
+    ).date()
 
-    return JSONResponse(
-        content={"message": "Vehicel allocation has been deleted successfully."},
-        status_code=status.HTTP_200_OK,
-    )
+    # Deleted before the allocation date
+    if today < allocation_date:
+        connection.VEHICLE_ALLOCATION.vehicle_allocation.delete_one(
+            {"_id": ObjectId(id)}
+        )
+
+        return JSONResponse(
+            content={"message": "Vehicel allocation has been deleted successfully."},
+            status_code=status.HTTP_200_OK,
+        )
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="Time has been exceeded!"
+        )
