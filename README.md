@@ -15,6 +15,7 @@ This project is a FastAPI-based vehicle allocation system that allows employees 
     python3 -m venv env
     source ~/env/bin/activate
     source venv/bin/
+    http://127.0.0.1:8000
     
 **Build and run the project using Docker Compose**
 
@@ -29,7 +30,5 @@ This project is a FastAPI-based vehicle allocation system that allows employees 
 **Run the development server**
 
     uvicorn index:app --reload
-
-You can now visit 127.0.0.1:8000 on your browser and see that the project is running.
 
 ---
